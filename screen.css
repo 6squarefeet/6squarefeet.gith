@@ -1,0 +1,245 @@
+    html, body {
+			margin: 0;
+			height: 100%;
+		}
+		body {
+			margin: 0 auto 25px auto;
+			font-family: 'Istok Web', sans-serif;
+			color: {color:Text};
+			background: {color:Background}{block:IfBackgroundImage} url({image:Background}) {block:IfFixBackground}fixed{/block:IfFixBackground} {block:IfNotRepeatBackground}no-repeat{/block:IfNotRepeatBackground}{/block:IfBackgroundImage} center 0;
+		}
+		* {
+			-webkit-transition: color .1s ease;
+			-moz-transition: color .1s ease;
+			-o-transition: color .1s ease;
+			transition: color .1s ease;
+			line-height: 150%;
+		}
+		a {
+			text-decoration: none;
+		}
+		.posts a:link, .posts a:visited {
+			color: {color:Links};
+		}
+		.posts a:hover, .posts a:active {
+			color: {color:Links hover};
+		}
+		a:link img {
+			border: none;
+		}
+		em, em a, a em {
+			font-style: italic;
+		}
+		h1 {
+			text-transform: uppercase;
+			font-size: 14px;
+		}
+		h2 {
+			text-transform: normal;
+			font-style: normal;
+			font-size: 12px;
+		}
+        h3 {
+            text-transform: uppercase;
+            font-size: 18px;
+        }
+		p, li, blockquote, td, code {
+			font-size: 12px;
+		}
+        z {
+            text-transform: uppercase;
+            font-size: 12px;
+            margin: 0 30%;
+        }
+		.sidebar {
+			width: 115px;
+			height: 100%;
+			margin: 0 14%;
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
+		.sidebar table,.sidebar table tr td {
+			height: 100%;
+		}
+		.sidebar h1 {
+			margin: 6px 0;
+			color: {color:Links};
+		}
+        .sidebar h3 {
+            margin: 6px 0;
+            color: {color:Links};
+        }
+		.sidebar h1 a:link, .sidebar h1 a:visited {
+			color: {color:Links};
+		}
+		.sidebar h1 a:hover, .sidebar h1 a:active {
+			color: {color:Links hover};
+		}
+		.sidebar img {
+			max-width: 150px;
+			margin: 0 0 0 -15%;
+		}
+		.sidebar h2 {
+			margin: 1px 0 1px 0;
+			color: {color:Links};
+		}
+		.sidebar p {
+			margin: 3px 0;
+			text-transform: lowercase;
+		}
+		.sidebar p a:link, .sidebar p a:visited {
+			color: {color:Text};
+		}
+		.sidebar p a:hover, .sidebar p a:active {
+			color: {color:Links hover};
+		}
+		.posts {
+			position: relative;
+			overflow: hidden;
+			margin: 10% 0 0 35%;
+			padding-right: 150px;
+			width: {text:Post width};
+		}
+		.post {
+			position: relative;
+			width: 100%;
+			float: left;
+			margin: 50px 0;
+		}
+		.photoset iframe {
+			margin: 0 auto; width: 80%;
+		}
+		.post img {
+			width: 80%;
+			{block:Permalink}
+                 width: 110%;
+            {/block:Permalink}
+		}
+		.post .photoset_photo {
+			margin-bottom: 10px; width: 80%;
+			{block:Permalink}
+                 width: 110%;
+            {/block:Permalink}
+		}
+		.post .photoset_photo:last-child {
+			margin-bottom: 0px !important;
+		}
+		.post p {
+			margin: 5px 0;
+		}
+		.post li {
+			margin: 2px 0;
+		}
+		.post p a, .post li a {
+			border-bottom: 1px dotted {color:Links};
+		}
+		.post p a:hover, .post li a:hover {
+			border-bottom: 1px dotted {color:Links hover};
+		}
+		.post blockquote {
+			margin: 5px 10px;
+			padding: 0 10px;
+			border-left: 1px {color:Text} solid;
+		}
+
+		.post .caption {
+		    position: absolute;
+		    top: 0%;
+		    left: 80%;
+		    width: 150px;
+		    height: 15px;
+		    padding-left: 2.5%;
+		    opacity: 0;
+		    -webkit-transition: opacity .1s ease;
+		    -moz-transition: opacity .1s ease;
+		    -o-transition: opacity .1s ease;
+		    transition: opacity .1s ease;
+		    {block:Permalink}
+		         top: 90%;
+                 left: -5px;
+                 width: 100%;
+            {/block:Permalink}
+		}
+		.post:hover .caption {
+			opacity: 1;
+		}
+
+		.notes p a:link, .post .caption p a:visited {
+			color: {color:Text};
+			border-bottom: 0px;
+		}
+		.notes p a:hover, .post .caption p a:active {
+			color: {color:Links hover};
+			border-bottom: 0px;
+		}
+
+		.post .permalink_link {
+			width: 100%;
+			margin-top: 8px;
+			{block:PermalinkPage}display: none;{/block:PermalinkPage}
+		}
+		.post .permalink_link * {
+			line-height: 100%;
+			font-size: 14px;
+		}
+		.post .permalink_link a {
+			margin-right: 10px;
+		}
+		.post .permalink_link a span {
+			font-size: 11px;
+		}
+		.audio .player_holder {
+			width: 100%;
+			overflow: hidden;
+			margin: 0 0 10px 0;
+		}
+		.audio .player_holder img {
+			width: 100px;
+			float: left;
+		}
+		.audio .player_holder .player {
+			margin: 0 95px;
+		}
+		.audio .player_holder .player_hasart {
+			width: 220px;
+			margin: 35px 40px;
+			float: left;
+		}
+		.chat p.odd {
+			margin-left: 25px;
+		}
+		.notes p {
+			margin-top:0;
+		}
+		ol.notes {
+			padding: 0px;
+			margin: 0px;
+			list-style-type: none;
+		}
+		ol.notes li.note {
+			margin: 10px 0;
+		}
+		ol.notes li.note img.avatar {
+			vertical-align: -5px;
+			margin-right: 10px;
+			width: 15px;
+			height: 15px;
+		}
+		ol.notes li.note span.action {
+			font-weight: normal;
+		}
+		ol.notes li.note .answer_content {
+			font-weight: normal;
+		}
+		ol.notes li.note blockquote {
+			margin: 5px 10px;
+			padding: 0 10px;
+			border-left: 2px {color:Text} solid;
+		}
+		ol.notes li.note blockquote a {
+			text-decoration: none;
+		}
+		.hidden {
+			display: none;
+		}
