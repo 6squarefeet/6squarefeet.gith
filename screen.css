@@ -111,7 +111,7 @@
 			margin: 0 auto; width: 80%;
 		}
 		.post img {
-			width: 80%;
+			width: 80px;
 			{block:Permalink}
                  width: 110px;
             {/block:Permalink}
