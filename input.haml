@@ -1,0 +1,123 @@
+%html
+  %head
+    %meta{charset:"utf-8"}
+    %meta{name:"viewport",content:"width=device-width,intial-scale=1.0"}
+    %title {block:PostTitle}{PostTitle}: {/block:PostTitle}{Title}
+    %link{rel:"stylesheet",href:"http://example.com/styles.css"}
+
+    %meta{name:"image:Sidebar",content:""}
+    %meta{name:"color:Text",content:""}
+    %meta{name:"color:Links",content:""}
+    %meta{name:"color:Links hover",content:""}
+
+    %meta{name:"text:Tag 1",content:""}
+    %meta{name:"text:Tag 2",content:""}
+    %meta{name:"text:Tag 3",content:""}
+    %meta{name:"text:Tag 4",content:""}
+    %meta{name:"text:Tag 5",content:""}
+    %meta{name:"text:Tag 6",content:""}
+    %meta{name:"text:Tag 7",content:""}
+    %meta{name:"text:Tag 8",content:""}
+    %meta{name:"text:Tag 9",content:""}
+    %meta{name:"text:Tag 10",content:""}
+    %meta{name:"text:Tag 11",content:""}
+    %meta{name:"text:Tag 12",content:""}
+    %meta{name:"text:Tag 13",content:""}
+    %meta{name:"text:Tag 14",content:""}
+    %meta{name:"text:Tag 15",content:""}
+
+  %body
+    .sidebar
+      %table{:width => "100%"}
+        %tr
+          %td
+            %h1
+              %a{:href => "/"}
+                {block:IfNotSidebarImage}
+                {Title}
+                {/block:IfNotSidebarImage}
+                {block:IfSidebarImage}
+                <img src="{image:Sidebar}" />
+                {/block:IfSidebarImage}
+            {block:Description}
+            %p{:id => "description"}{Description}
+            {/block:Description}
+
+            {block:IfTag1}
+            %p
+              %a{:href => "/tagged/{text:Tag 1}"}{text:Tag 1}
+            {/block:IfTag1}
+
+            {block:IfTag2}
+            %p
+              %a{:href => "/tagged/{text:Tag 2}"}{text:Tag 2}
+            {/block:IfTag2}
+
+            {block:IfTag3}
+            %p
+              %a{:href => "/tagged/{text:Tag 3}"}{text:Tag 3}
+            {/block:IfTag3}
+
+            {block:IfTag4}
+            %p
+              %a{:href => "/tagged/{text:Tag 4}"}{text:Tag 4}
+            {/block:IfTag4}
+
+            {block:IfTag5}
+            %p
+              %a{:href => "/tagged/{text:Tag 5}"}{text:Tag 5}
+            {/block:IfTag5}
+
+            {block:IfTag6}
+            %p
+              %a{:href => "/tagged/{text:Tag 6}"}{text:Tag 6}
+            {/block:IfTag6}
+
+            {block:IfTag7}
+            %p
+              %a{:href => "/tagged/{text:Tag 7}"}{text:Tag 7}
+            {/block:IfTag7}
+
+            %p
+              %a{:href => "/tagged/about"}about
+
+            %p
+              %a{:href => "/archive"}{lang:Archive}
+
+            {block:AskEnabled}
+            %p
+              %a{:href => "/ask"}contact
+            {/block:AskEnabled}
+
+
+    .main
+      {block:Posts}
+      {block:Text}
+      .post-text
+        {block:Title}
+        %h1
+          %a{href:"{Permalink}"} {Title}
+        {/block:Title}
+        .content
+          {Body}
+        .metadata
+          %ul
+            %li
+              %a{href:"{Permalink}"} Permalink to this post
+            {block:HasTags}
+            %li Tagged
+            %ul
+              {block:Tags}
+              %li
+                %a{href:"{TagURL}"} {Tag}
+              {/block:Tags}
+            {/block:HasTags}
+        {/block:Text}
+        {block:Photo}
+        %a{href:"{Permalink}"}
+          %img{src:"{PhotoURL-HighRes}"}
+        {/block:Photo}
+        {/block:Posts}
+
+
+    %footer

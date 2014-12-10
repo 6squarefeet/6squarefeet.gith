@@ -1,0 +1,135 @@
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='width=device-width,intial-scale=1.0' name='viewport'>
+    <title>{block:PostTitle}{PostTitle}: {/block:PostTitle}{Title}</title>
+    <link href='http://example.com/styles.css' rel='stylesheet'>
+    <meta content='' name='image:Sidebar'>
+    <meta content='' name='color:Text'>
+    <meta content='' name='color:Links'>
+    <meta content='' name='color:Links hover'>
+    <meta content='' name='text:Tag 1'>
+    <meta content='' name='text:Tag 2'>
+    <meta content='' name='text:Tag 3'>
+    <meta content='' name='text:Tag 4'>
+    <meta content='' name='text:Tag 5'>
+    <meta content='' name='text:Tag 6'>
+    <meta content='' name='text:Tag 7'>
+    <meta content='' name='text:Tag 8'>
+    <meta content='' name='text:Tag 9'>
+    <meta content='' name='text:Tag 10'>
+    <meta content='' name='text:Tag 11'>
+    <meta content='' name='text:Tag 12'>
+    <meta content='' name='text:Tag 13'>
+    <meta content='' name='text:Tag 14'>
+    <meta content='' name='text:Tag 15'>
+  </head>
+  <body>
+    <div class='sidebar'>
+      <table width='100%'>
+        <tr>
+          <td>
+            <h1>
+              <a href='/'>
+                {block:IfNotSidebarImage}
+                {Title}
+                {/block:IfNotSidebarImage}
+                {block:IfSidebarImage}
+                <img src="{image:Sidebar}" />
+                {/block:IfSidebarImage}
+              </a>
+            </h1>
+            {block:Description}
+            <p id='description'>{Description}</p>
+            {/block:Description}
+            {block:IfTag1}
+            <p>
+              <a href='/tagged/{text:Tag 1}'>{text:Tag 1}</a>
+            </p>
+            {/block:IfTag1}
+            {block:IfTag2}
+            <p>
+              <a href='/tagged/{text:Tag 2}'>{text:Tag 2}</a>
+            </p>
+            {/block:IfTag2}
+            {block:IfTag3}
+            <p>
+              <a href='/tagged/{text:Tag 3}'>{text:Tag 3}</a>
+            </p>
+            {/block:IfTag3}
+            {block:IfTag4}
+            <p>
+              <a href='/tagged/{text:Tag 4}'>{text:Tag 4}</a>
+            </p>
+            {/block:IfTag4}
+            {block:IfTag5}
+            <p>
+              <a href='/tagged/{text:Tag 5}'>{text:Tag 5}</a>
+            </p>
+            {/block:IfTag5}
+            {block:IfTag6}
+            <p>
+              <a href='/tagged/{text:Tag 6}'>{text:Tag 6}</a>
+            </p>
+            {/block:IfTag6}
+            {block:IfTag7}
+            <p>
+              <a href='/tagged/{text:Tag 7}'>{text:Tag 7}</a>
+            </p>
+            {/block:IfTag7}
+            <p>
+              <a href='/tagged/about'>about</a>
+            </p>
+            <p>
+              <a href='/archive'>{lang:Archive}</a>
+            </p>
+            {block:AskEnabled}
+            <p>
+              <a href='/ask'>contact</a>
+            </p>
+            {/block:AskEnabled}
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class='main'>
+      {block:Posts}
+      {block:Text}
+      <div class='post-text'>
+        {block:Title}
+        <h1>
+          <a href='{Permalink}'>{Title}</a>
+        </h1>
+        {/block:Title}
+        <div class='content'>
+          {Body}
+        </div>
+        <div class='metadata'>
+          <ul>
+            <li>
+              <a href='{Permalink}'>Permalink to this post</a>
+            </li>
+            {block:HasTags}
+            <li>Tagged</li>
+            <ul>
+              {block:Tags}
+              <li>
+                <a href='{TagURL}'>{Tag}</a>
+              </li>
+              {/block:Tags}
+            </ul>
+            {/block:HasTags}
+          </ul>
+        </div>
+        {/block:Text}
+        {block:Photo}
+        <a href='{Permalink}'>
+          <img src='{PhotoURL-HighRes}'>
+        </a>
+        {/block:Photo}
+        {/block:Posts}
+      </div>
+    </div>
+    <footer></footer>
+  </body>
+</html>
