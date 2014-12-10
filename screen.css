@@ -113,7 +113,7 @@
 		.post img {
 			width: 80%;
 			{block:Permalink}
-                 width: 110%;
+                 width: 110px;
             {/block:Permalink}
 		}
 		.post .photoset_photo {
