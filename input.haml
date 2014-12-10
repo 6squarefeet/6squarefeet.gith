@@ -81,6 +81,8 @@
             {/block:IfTag7}
 
             %p
+
+            %p
               %a{:href => "/tagged/about"}about
 
             %p
@@ -116,8 +118,9 @@
             {/block:HasTags}
         {/block:Text}
         {block:Photo}
-        %a{href:"{Permalink}"}
-          %img{src:"{PhotoURL-HighRes}"}
+        .photos
+          %a{href:"{Permalink}"}
+            %img{src:"{PhotoURL-HighRes}"}
         {/block:Photo}
         {/block:Posts}
 

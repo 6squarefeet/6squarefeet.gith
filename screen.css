@@ -1,4 +1,7 @@
-    html, body {
+ @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow);
+
+
+		html, body {
 			margin: 0;
 			height: 100%;
 		}
@@ -6,7 +9,6 @@
 			margin: 0 auto 25px auto;
 			font-family: 'Istok Web', sans-serif;
 			color: {color:Text};
-			background: {color:Background}{block:IfBackgroundImage} url({image:Background}) {block:IfFixBackground}fixed{/block:IfFixBackground} {block:IfNotRepeatBackground}no-repeat{/block:IfNotRepeatBackground}{/block:IfBackgroundImage} center 0;
 		}
 		* {
 			-webkit-transition: color .1s ease;
@@ -27,9 +29,6 @@
 		a:link img {
 			border: none;
 		}
-		em, em a, a em {
-			font-style: italic;
-		}
 		h1 {
 			text-transform: uppercase;
 			font-size: 14px;
@@ -46,11 +45,6 @@
 		p, li, blockquote, td, code {
 			font-size: 12px;
 		}
-        z {
-            text-transform: uppercase;
-            font-size: 12px;
-            margin: 0 30%;
-        }
 		.sidebar {
 			width: 115px;
 			height: 100%;
@@ -94,6 +88,9 @@
 		.sidebar p a:hover, .sidebar p a:active {
 			color: {color:Links hover};
 		}
+		.tagslist {
+		    margin-top: 50px;
+		}
 		.posts {
 			position: relative;
 			overflow: hidden;
@@ -111,10 +108,14 @@
 			margin: 0 auto; width: 80%;
 		}
 		.post img {
-			width: 80vw;
+			width: 80%;
 			{block:Permalink}
-                 width: 110px;
-      {/block:Permalink}
+                 width: 110%;
+            {/block:Permalink}
+		}
+		.photos img {
+		    width: {text:Post width};
+		    padding-bottom: 100px;
 		}
 		.post .photoset_photo {
 			margin-bottom: 10px; width: 80%;
@@ -164,7 +165,6 @@
 		.post:hover .caption {
 			opacity: 1;
 		}
-
 		.notes p a:link, .post .caption p a:visited {
 			color: {color:Text};
 			border-bottom: 0px;
@@ -239,7 +239,4 @@
 		}
 		ol.notes li.note blockquote a {
 			text-decoration: none;
-		}
-		.hidden {
-			display: none;
 		}
