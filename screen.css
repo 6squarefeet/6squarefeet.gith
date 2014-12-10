@@ -99,7 +99,7 @@
 			overflow: hidden;
 			margin: 10% 0 0 35%;
 			padding-right: 150px;
-			width: 150px;
+			width: {text:Post width};
 		}
 		.post {
 			position: relative;
@@ -111,10 +111,10 @@
 			margin: 0 auto; width: 80%;
 		}
 		.post img {
-			width: 80px;
+			width: 80vw;
 			{block:Permalink}
                  width: 110px;
-            {/block:Permalink}
+      {/block:Permalink}
 		}
 		.post .photoset_photo {
 			margin-bottom: 10px; width: 80%;
