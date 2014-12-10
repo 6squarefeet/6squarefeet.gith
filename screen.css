@@ -85,7 +85,7 @@
 		.sidebar p a:hover, .sidebar p a:active {
 			color: {color:Links hover};
 		}
-		.tagslist {
+		.tagslist{
 		    margin-top: 50px;
 		}
 		.posts {
@@ -162,6 +162,7 @@
 		.post:hover .caption {
 			opacity: 1;
 		}
+
 		.notes p a:link, .post .caption p a:visited {
 			color: {color:Text};
 			border-bottom: 0px;
@@ -236,4 +237,7 @@
 		}
 		ol.notes li.note blockquote a {
 			text-decoration: none;
+		}
+		.hidden {
+			display: none;
 		}

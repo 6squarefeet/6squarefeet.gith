@@ -3,7 +3,7 @@
     <meta charset='utf-8'>
     <meta content='width=device-width,intial-scale=1.0' name='viewport'>
     <title>{block:PostTitle}{PostTitle}: {/block:PostTitle}{Title}</title>
-    <link href='http://6squarefeet.github.io/screen.css' rel='stylesheet'>
+    <script src='http://codysherman.tumblr.com/tools/infinite-scrolling/code' type='text/javascript'></script>
     <meta content='' name='image:Sidebar'>
     <meta content='' name='color:Text'>
     <meta content='' name='color:Links'>
@@ -43,42 +43,44 @@
             {block:Description}
             <p id='description'>{Description}</p>
             {/block:Description}
-            {block:IfTag1}
-            <p>
-              <a href='/tagged/{text:Tag 1}'>{text:Tag 1}</a>
-            </p>
-            {/block:IfTag1}
-            {block:IfTag2}
-            <p>
-              <a href='/tagged/{text:Tag 2}'>{text:Tag 2}</a>
-            </p>
-            {/block:IfTag2}
-            {block:IfTag3}
-            <p>
-              <a href='/tagged/{text:Tag 3}'>{text:Tag 3}</a>
-            </p>
-            {/block:IfTag3}
-            {block:IfTag4}
-            <p>
-              <a href='/tagged/{text:Tag 4}'>{text:Tag 4}</a>
-            </p>
-            {/block:IfTag4}
-            {block:IfTag5}
-            <p>
-              <a href='/tagged/{text:Tag 5}'>{text:Tag 5}</a>
-            </p>
-            {/block:IfTag5}
-            {block:IfTag6}
-            <p>
-              <a href='/tagged/{text:Tag 6}'>{text:Tag 6}</a>
-            </p>
-            {/block:IfTag6}
-            {block:IfTag7}
-            <p>
-              <a href='/tagged/{text:Tag 7}'>{text:Tag 7}</a>
-            </p>
-            {/block:IfTag7}
-            <p></p>
+            <div class='tagslist'>
+              {block:IfTag1}
+              <p>
+                <a href='/tagged/{text:Tag 1}'>{text:Tag 1}</a>
+              </p>
+              {/block:IfTag1}
+              {block:IfTag2}
+              <p>
+                <a href='/tagged/{text:Tag 2}'>{text:Tag 2}</a>
+              </p>
+              {/block:IfTag2}
+              {block:IfTag3}
+              <p>
+                <a href='/tagged/{text:Tag 3}'>{text:Tag 3}</a>
+              </p>
+              {/block:IfTag3}
+              {block:IfTag4}
+              <p>
+                <a href='/tagged/{text:Tag 4}'>{text:Tag 4}</a>
+              </p>
+              {/block:IfTag4}
+              {block:IfTag5}
+              <p>
+                <a href='/tagged/{text:Tag 5}'>{text:Tag 5}</a>
+              </p>
+              {/block:IfTag5}
+              {block:IfTag6}
+              <p>
+                <a href='/tagged/{text:Tag 6}'>{text:Tag 6}</a>
+              </p>
+              {/block:IfTag6}
+              {block:IfTag7}
+              <p>
+                <a href='/tagged/{text:Tag 7}'>{text:Tag 7}</a>
+              </p>
+              {/block:IfTag7}
+            </div>
+            <p>.</p>
             <p>
               <a href='/tagged/about'>about</a>
             </p>
@@ -94,44 +96,46 @@
         </tr>
       </table>
     </div>
-    <div class='posts'>
-      {block:Posts}
-      {block:Text}
-      <div class='post-text'>
-        {block:Title}
-        <h1>
-          <a href='{Permalink}'>{Title}</a>
-        </h1>
-        {/block:Title}
-        <div class='content'>
-          {Body}
-        </div>
-        <div class='metadata'>
-          <ul>
-            <li>
-              <a href='{Permalink}'>Permalink to this post</a>
-            </li>
-            {block:HasTags}
-            <li>Tagged</li>
+    <div class='autopagerize_page_element'>
+      <div class='posts'>
+        {block:Posts}
+        {block:Text}
+        <div class='post-text'>
+          {block:Title}
+          <h1>
+            <a href='{Permalink}'>{Title}</a>
+          </h1>
+          {/block:Title}
+          <div class='content'>
+            {Body}
+          </div>
+          <div class='metadata'>
             <ul>
-              {block:Tags}
               <li>
-                <a href='{TagURL}'>{Tag}</a>
+                <a href='{Permalink}'>Permalink to this post</a>
               </li>
-              {/block:Tags}
+              {block:HasTags}
+              <li>Tagged</li>
+              <ul>
+                {block:Tags}
+                <li>
+                  <a href='{TagURL}'>{Tag}</a>
+                </li>
+                {/block:Tags}
+              </ul>
+              {/block:HasTags}
             </ul>
-            {/block:HasTags}
-          </ul>
+          </div>
+          {/block:Text}
+          {block:Photo}
+          <div class='photos'>
+            <a href='{Permalink}'>
+              <img src='{PhotoURL-HighRes}'>
+            </a>
+          </div>
+          {/block:Photo}
+          {/block:Posts}
         </div>
-        {/block:Text}
-        {block:Photo}
-        <div class='photos'>
-          <a href='{Permalink}'>
-            <img src='{PhotoURL-HighRes}'>
-          </a>
-        </div>
-        {/block:Photo}
-        {/block:Posts}
       </div>
     </div>
     <footer></footer>

@@ -3,7 +3,8 @@
     %meta{charset:"utf-8"}
     %meta{name:"viewport",content:"width=device-width,intial-scale=1.0"}
     %title {block:PostTitle}{PostTitle}: {/block:PostTitle}{Title}
-    %link{rel:"stylesheet",href:"http://6squarefeet.github.io/screen.css"}
+
+    %script{src:"http://codysherman.tumblr.com/tools/infinite-scrolling/code",type:"text/javascript"}
 
     %meta{name:"image:Sidebar",content:""}
     %meta{name:"color:Text",content:""}
@@ -45,42 +46,43 @@
             %p{:id => "description"}{Description}
             {/block:Description}
 
-            {block:IfTag1}
-            %p
-              %a{:href => "/tagged/{text:Tag 1}"}{text:Tag 1}
-            {/block:IfTag1}
+            .tagslist
+              {block:IfTag1}
+              %p
+                %a{:href => "/tagged/{text:Tag 1}"}{text:Tag 1}
+              {/block:IfTag1}
 
-            {block:IfTag2}
-            %p
-              %a{:href => "/tagged/{text:Tag 2}"}{text:Tag 2}
-            {/block:IfTag2}
+              {block:IfTag2}
+              %p
+                %a{:href => "/tagged/{text:Tag 2}"}{text:Tag 2}
+              {/block:IfTag2}
 
-            {block:IfTag3}
-            %p
-              %a{:href => "/tagged/{text:Tag 3}"}{text:Tag 3}
-            {/block:IfTag3}
+              {block:IfTag3}
+              %p
+                %a{:href => "/tagged/{text:Tag 3}"}{text:Tag 3}
+              {/block:IfTag3}
 
-            {block:IfTag4}
-            %p
-              %a{:href => "/tagged/{text:Tag 4}"}{text:Tag 4}
-            {/block:IfTag4}
+              {block:IfTag4}
+              %p
+                %a{:href => "/tagged/{text:Tag 4}"}{text:Tag 4}
+              {/block:IfTag4}
 
-            {block:IfTag5}
-            %p
-              %a{:href => "/tagged/{text:Tag 5}"}{text:Tag 5}
-            {/block:IfTag5}
+              {block:IfTag5}
+              %p
+                %a{:href => "/tagged/{text:Tag 5}"}{text:Tag 5}
+              {/block:IfTag5}
 
-            {block:IfTag6}
-            %p
-              %a{:href => "/tagged/{text:Tag 6}"}{text:Tag 6}
-            {/block:IfTag6}
+              {block:IfTag6}
+              %p
+                %a{:href => "/tagged/{text:Tag 6}"}{text:Tag 6}
+              {/block:IfTag6}
 
-            {block:IfTag7}
-            %p
-              %a{:href => "/tagged/{text:Tag 7}"}{text:Tag 7}
-            {/block:IfTag7}
+              {block:IfTag7}
+              %p
+                %a{:href => "/tagged/{text:Tag 7}"}{text:Tag 7}
+              {/block:IfTag7}
 
-            %p
+            %p .
 
             %p
               %a{:href => "/tagged/about"}about
@@ -93,36 +95,36 @@
               %a{:href => "/ask"}contact
             {/block:AskEnabled}
 
-
-    .posts
-      {block:Posts}
-      {block:Text}
-      .post-text
-        {block:Title}
-        %h1
-          %a{href:"{Permalink}"} {Title}
-        {/block:Title}
-        .content
-          {Body}
-        .metadata
-          %ul
-            %li
-              %a{href:"{Permalink}"} Permalink to this post
-            {block:HasTags}
-            %li Tagged
+    .autopagerize_page_element
+      .posts
+        {block:Posts}
+        {block:Text}
+        .post-text
+          {block:Title}
+          %h1
+            %a{href:"{Permalink}"} {Title}
+          {/block:Title}
+          .content
+            {Body}
+          .metadata
             %ul
-              {block:Tags}
               %li
-                %a{href:"{TagURL}"} {Tag}
-              {/block:Tags}
-            {/block:HasTags}
-        {/block:Text}
-        {block:Photo}
-        .photos
-          %a{href:"{Permalink}"}
-            %img{src:"{PhotoURL-HighRes}"}
-        {/block:Photo}
-        {/block:Posts}
+                %a{href:"{Permalink}"} Permalink to this post
+              {block:HasTags}
+              %li Tagged
+              %ul
+                {block:Tags}
+                %li
+                  %a{href:"{TagURL}"} {Tag}
+                {/block:Tags}
+              {/block:HasTags}
+          {/block:Text}
+          {block:Photo}
+          .photos
+            %a{href:"{Permalink}"}
+              %img{src:"{PhotoURL-HighRes}"}
+          {/block:Photo}
+          {/block:Posts}
 
 
     %footer
