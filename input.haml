@@ -106,25 +106,13 @@
           {/block:Title}
           .content
             {Body}
-          .metadata
-            %ul
-              %li
-                %a{href:"{Permalink}"} Permalink to this post
-              {block:HasTags}
-              %li Tagged
-              %ul
-                {block:Tags}
-                %li
-                  %a{href:"{TagURL}"} {Tag}
-                {/block:Tags}
-              {/block:HasTags}
-          {/block:Text}
-          {block:Photo}
-          .photos
-            %a{href:"{Permalink}"}
-              %img{src:"{PhotoURL-HighRes}"}
-          {/block:Photo}
-          {/block:Posts}
+        {/block:Text}
+        {block:Photo}
+        .photos
+          %a{href:"{Permalink}"}
+            %img{src:"{PhotoURL-HighRes}"}
+        {/block:Photo}
+        {/block:Posts}
 
 
     %footer

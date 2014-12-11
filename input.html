@@ -109,33 +109,16 @@
           <div class='content'>
             {Body}
           </div>
-          <div class='metadata'>
-            <ul>
-              <li>
-                <a href='{Permalink}'>Permalink to this post</a>
-              </li>
-              {block:HasTags}
-              <li>Tagged</li>
-              <ul>
-                {block:Tags}
-                <li>
-                  <a href='{TagURL}'>{Tag}</a>
-                </li>
-                {/block:Tags}
-              </ul>
-              {/block:HasTags}
-            </ul>
-          </div>
-          {/block:Text}
-          {block:Photo}
-          <div class='photos'>
-            <a href='{Permalink}'>
-              <img src='{PhotoURL-HighRes}'>
-            </a>
-          </div>
-          {/block:Photo}
-          {/block:Posts}
         </div>
+        {/block:Text}
+        {block:Photo}
+        <div class='photos'>
+          <a href='{Permalink}'>
+            <img src='{PhotoURL-HighRes}'>
+          </a>
+        </div>
+        {/block:Photo}
+        {/block:Posts}
       </div>
     </div>
     <footer></footer>
